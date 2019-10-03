@@ -173,7 +173,7 @@
         <a class="list-icon" v-bind:class="{ 'active': layout == 'list'}" v-on:click="layout = 'list'"></a>
         <a class="grid-icon" v-bind:class="{ 'active': layout == 'grid'}" v-on:click="layout = 'grid'"></a>
         <hr>
-        <input type="text" v-model="searchString" placeholder="Enter your search terms"/>
+        <input type="text" v-model="searchString" placeholder="Enter your description search terms"/>
     </div>
 
 
@@ -250,7 +250,7 @@
                 searchString = searchString.trim().toLowerCase();
 
                 event_array = event_array.filter(function (item) {
-                    if (item.fields.nom.toLowerCase().indexOf(searchString) !== -1) {
+                    if (item.fields.description.toLowerCase().indexOf(searchString) !== -1) {
                         return item;
                     }
                 })
